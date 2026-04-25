@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head> <title> Fast food by Melkior_grill</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="traitement.php" method="POST">
+        NOMS : <input type="text" name="nom" placeholder="Ton nom" required><br>
+        PRENOMS : <input type="text" name="prenom" placeholder="Ton prénom"><br>
+        <div style="position: relative; width: 500px;">
+            Mot de passe : <input type="password" id="mdp" required>
+            <span onclick="toggleMdp()" style="position: absolute; right: 250px; top: 0px; cursor: pointer;"> 0
+            </span>
+        </div>
+        <script>
+            function toggleMdp() {
+                const input = document.getElementById('mdp');
+                if (input.type === 'password') {
+                    input.type = 'text'
+                } else {
+                    input.type = 'password'
+                }
+            }
+        </script>
+        Email : <input type="email" name="mail" placeholder="votre_email@gmail.com" required><br>
+        Age : <input type="number" name="age" min="0" max="120">
+        Date de naissance : <input type="date" name="naissance"><br>
+        PHOTO : <input type="file" name="avatar"><br>
+        SEXE : Homme <input type="radio" name="sexe" value="h">
+               Femme <input type="radio" name="sexe" value="f">
+        <input type="hidden" name="token" value="MELKIOR"><br>
+        J'accepte les conditions d'utilisation <input type="checkbox" name="accepte" value="oui"><br>
+        <input type="submit" value="Envoyer">
+            </form>
+</body>
+</html>
