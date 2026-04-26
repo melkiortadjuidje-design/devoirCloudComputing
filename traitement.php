@@ -47,8 +47,7 @@ $stmt->bind_param(
     $age,
     $naissance,
     $sexe,
-    $token,
-    $accepte
+    $
 );
 
 $stmt->execute();
