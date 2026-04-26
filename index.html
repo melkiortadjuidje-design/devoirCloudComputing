@@ -6,33 +6,43 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="traitement.php" method="POST">
-        NOMS : <input type="text" name="nom" placeholder="Ton nom" required><br>
-        PRENOMS : <input type="text" name="prenom" placeholder="Ton prénom"><br>
-        <div style="position: relative; width: 500px;">
-            Mot de passe : <input type="password" id="mdp" required>
-            <span onclick="toggleMdp()" style="position: absolute; right: 250px; top: 0px; cursor: pointer;"> 😇
-            </span>
-        </div>
-        <script>
-            function toggleMdp() {
-                const input = document.getElementById('mdp');
-                if (input.type === 'password') {
-                    input.type = 'text'
-                } else {
-                    input.type = 'password'
-                }
+    <form action="traitement.php" method="POST" enctype="multipart/form-data">
+
+    Noms : <input type="text" name="nom" placeholder="Ton nom" required><br>
+    Prenoms : <input type="text" name="prenom" placeholder="Ton prénom"><br>
+
+    <div style="position: relative; width: 500px;">
+        Mot de passe : <input type="password" id="mdp" name="mdp" required>
+        <span onclick="toggleMdp()" style="position: absolute; right: 250px; top: 0px; cursor: pointer;"> 👁
+        </span>
+    </div>
+
+    <script>
+        function toggleMdp() {
+            const input = document.getElementById('mdp');
+            if (input.type === 'password') {
+                input.type = 'text'
+            } else {
+                input.type = 'password'
             }
-        </script>
-        Email : <input type="email" name="mail" placeholder="votre_email@gmail.com" required><br>
-        Age : <input type="number" name="age" min="0" max="120">
-        Date de naissance : <input type="date" name="naissance"><br>
-        PHOTO : <input type="file" name="avatar"><br>
-        SEXE : Homme <input type="radio" name="sexe" value="h">
-               Femme <input type="radio" name="sexe" value="f">
-        <input type="hidden" name="token" value="MELKIOR"><br>
-        J'accepte les conditions d'utilisation <input type="checkbox" name="accepte" value="oui"><br>
-        <input type="submit" value="Envoyer">
-            </form>
+        }
+    </script>
+
+    Email : <input type="email" name="mail" placeholder="votre_email@gmail.com" required><br>
+    Age : <input type="number" name="age" min="0" max="120"><br>
+    Date de naissance : <input type="date" name="naissance"><br>
+
+    Photo : <input type="file" name="avatar"><br>
+
+    Sexe :
+    Homme <input type="radio" name="sexe" value="h">
+    Femme <input type="radio" name="sexe" value="f"><br>
+
+    <input type="hidden" name="token" value="MELKIOR"><br>
+
+    J'accepte les conditions <input type="checkbox" name="accepte" value="oui"><br>
+
+    <input type="submit" value="Envoyer">
+    </form>
 </body>
 </html>
