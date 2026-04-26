@@ -36,7 +36,7 @@ $email = htmlspecialchars($email);
     $accepte = isset($_POST['accepte']) ? "Oui" : "Non";
     // recuperation des données par la base
     $sql = "INSERT INTO client (Nom, Prenom, Email, MDP, Age, Date_de_naissance, Sexe, Photo)
-VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
 $stmt = $conn->prepare($sql);
 $stmt->bind_param(
