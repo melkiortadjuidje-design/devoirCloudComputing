@@ -21,7 +21,7 @@ $email = htmlspecialchars($email);
     $accepte = isset($_POST['accepte']) ? "Oui" : "Non";
 
     // Ici je fais ce que je veux avec les données
-echo "Salut $Noms, on a bien recu ton formulaire";
+echo "Salut $nom, on a bien recu ton formulaire";
 
     echo "Nom : $nom <br>";
     echo "Prénom : $prenom <br>";
