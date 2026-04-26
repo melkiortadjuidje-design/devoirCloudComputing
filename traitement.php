@@ -39,7 +39,7 @@ VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
 $stmt = $conn->prepare($sql);
 $stmt->bind_param(
-    "ssssissss",
+    "ssssiss",
     $nom,
     $prenom,
     $email,
