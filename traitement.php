@@ -33,7 +33,24 @@ $email = htmlspecialchars($email);
 
     // Checkbox
     $accepte = isset($_POST['accepte']) ? "Oui" : "Non";
+$sql = "INSERT INTO utilisateurs (nom, prenom, email, mdp, age, naissance, sexe, token, accepte)
+VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
+$stmt = $conn->prepare($sql);
+$stmt->bind_param(
+    "ssssissss",
+    $nom,
+    $prenom,
+    $email,
+    $mdp,
+    $age,
+    $naissance,
+    $sexe,
+    $token,
+    $accepte
+);
+
+$stmt->execute();
     // Ici je fais ce que je veux avec les données
 echo "Salut $nom, on a bien recu ton formulaire <br>";
 
