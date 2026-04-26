@@ -34,6 +34,17 @@ $email = htmlspecialchars($email);
 
     // Checkbox
     $accepte = isset($_POST['accepte']) ? "Oui" : "Non";
+
+    if (isset($_FILES['avatar'])) {
+$photo = $_FILES['avatar']['name'];
+$tmp = $_FILES['avatar']['tmp_name'];
+
+move_uploaded_file($tmp, "uploads/" . $photo);  
+
+echo "Photo envoyée : " . $photo;
+
+    }
+    
     // recuperation des données par la base
     $sql = "INSERT INTO client (Nom, Prenom, Email, MDP, Age, Date_de_naissance, Sexe, Photo)
 VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
@@ -68,15 +79,4 @@ echo "Salut $nom, on a bien recu ton formulaire <br>";
 } else {
     echo "Acces interdit";
 }
-
-if (isset($_FILES['avatar'])) {
-$photo = $_FILES['avatar']['name'];
-$tmp = $_FILES['avatar']['tmp_name'];
-
-move_uploaded_file($tmp, "uploads/" . $photo);  
-
-echo "Photo envoyée : " . $photo;
-
-}
-
 ?>
