@@ -33,7 +33,8 @@ $email = htmlspecialchars($email);
 
     // Checkbox
     $accepte = isset($_POST['accepte']) ? "Oui" : "Non";
-$sql = "INSERT INTO utilisateurs (nom, prenom, email, mdp, age, naissance, sexe, token, accepte)
+    // recuperation des données par la base
+    $sql = "INSERT INTO utilisateurs (nom, prenom, email, mdp, age, naissance, sexe, token, accepte)
 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
 $stmt = $conn->prepare($sql);
