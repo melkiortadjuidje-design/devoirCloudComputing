@@ -71,12 +71,12 @@ echo "Salut $nom, on a bien recu ton formulaire <br>";
 }
 
 if (isset($_FILES['avatar'])) {
-$Photo = $_FILES['avatar']['name'];
+$photo = $_FILES['avatar']['name'];
 $tmp = $_FILES['avatar']['tmp_name'];
 
-move_uploaded_file($tmp, "uploads/" . $Photo);  
+move_uploaded_file($tmp, "uploads/" . $photo);  
 
-echo "Photo envoyée : " . $Photo;
+echo "Photo envoyée : " . $photo;
 
 }
 
