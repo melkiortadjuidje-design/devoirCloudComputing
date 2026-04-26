@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 // On récupère les données avec $_POST['name']
     $nom = $_POST['nom'];
     $prenom = $_POST['prenom'];
-    $mdp = $_POST['mdp'];
+    $mdp = password_hash($_POST['mdp'], PASSWORD_DEFAULT);
     $email = $_POST['mail'];
     $age = $_POST['age'];
     $naissance = $_POST['naissance'];
