@@ -48,7 +48,7 @@ $stmt->bind_param(
     $age,
     $naissance,
     $sexe,
-    $
+    $photo
 );
 
 $stmt->execute();
