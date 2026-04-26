@@ -1,7 +1,7 @@
 <?php
 $host = "localhost";
 $user = "melkior";
-$password = "1234";
+$password = "Melkior@1234";
 $dbname = "fastfood";
 
 // Connexion MySQL
