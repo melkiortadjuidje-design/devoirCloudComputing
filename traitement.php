@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Sécurité de base : éviter les failles XSS
 $nom = htmlspecialchars($nom);
-$email = htmlspecialchars($email)
+$email = htmlspecialchars($email);
 
     // Checkbox
     $accepte = isset($_POST['accepte']) ? "Oui" : "Non";
