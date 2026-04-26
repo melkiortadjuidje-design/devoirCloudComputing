@@ -1,4 +1,18 @@
 <?php
+$host = "localhost";
+$user = "melkior";
+$password = "1234";
+$dbname = "fastfood";
+
+// Connexion MySQL
+$conn = new mysqli($host, $user, $password, $dbname);
+
+// Vérification
+if ($conn->connect_error) {
+    die("Erreur : " . $conn->connect_error);
+}
+
+echo "Connexion MySQL réussie<br>";
 
 // Vérifier si le formulaire est envoyé
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
