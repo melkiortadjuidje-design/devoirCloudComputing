@@ -28,10 +28,10 @@
     </script>
 
     Email : <input type="email" name="mail" placeholder="votre_email@gmail.com" required><br>
-    Age : <input type="number" name="age" min="0" max="120"><br>
-    Date de naissance : <input type="date" name="naissance"><br>
+    Age : <input type="number" name="age" min="0" max="120" required><br>
+    Date de naissance : <input type="date" name="naissance" required><br>
 
-    Photo : <input type="file" name="avatar"><br>
+    Photo : <input type="file" name="avatar" required><br>
 
     Sexe :
     Homme <input type="radio" name="sexe" value="h">
@@ -39,7 +39,7 @@
 
     <input type="hidden" name="token" value="MELKIOR"><br>
 
-    J'accepte les conditions <input type="checkbox" name="accepte" value="oui"><br>
+    J'accepte les conditions <input type="checkbox" name="accepte" value="oui" required><br>
 
     <input type="submit" value="Envoyer">
     </form>
