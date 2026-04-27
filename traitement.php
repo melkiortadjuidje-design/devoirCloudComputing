@@ -25,7 +25,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $age = $_POST['age'];
     $naissance = $_POST['naissance'];
     $sexe = $_POST['sexe'];
-    $token = $_POST['token'];
     
     // Sécurité de base : éviter les failles XSS
 $nom = htmlspecialchars($nom);
