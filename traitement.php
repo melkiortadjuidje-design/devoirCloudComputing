@@ -26,8 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $naissance = $_POST['naissance'];
     $sexe = $_POST['sexe'];
     $token = $_POST['token'];
-    $photo = $_FILES['avatar']['name'];
-
+    
     // Sécurité de base : éviter les failles XSS
 $nom = htmlspecialchars($nom);
 $email = htmlspecialchars($email);
