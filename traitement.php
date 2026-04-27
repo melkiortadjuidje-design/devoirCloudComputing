@@ -34,10 +34,10 @@ $email = htmlspecialchars($email);
     // Checkbox
     $accepte = isset($_POST['accepte']) ? "Oui" : "Non";
 
-    $photo = $_FILES['avatar']['name'];
-    $tmp = $_FILES['avatar']['tmp_name'];
-    
     if (isset($_FILES['avatar'])) {
+ $photo = $_FILES['avatar']['name'];
+ $tmp = $_FILES['avatar']['tmp_name'];
+    
 move_uploaded_file($tmp, "uploads/" . $photo);  
 echo "Photo envoyée : " . $photo;
 
@@ -77,4 +77,5 @@ echo "Salut $nom, on a bien recu ton formulaire <br>";
 } else {
     echo "Acces interdit";
 }
+
 ?>
