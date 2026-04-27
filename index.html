@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head> <title> Fast food by Melkior_grill</title>
+<head>
+    <link rel="stylesheet" href="style.css"> <title> Fast food by Melkior_grill</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-    <form action="traitement.php" method="POST" enctype="multipart/form-data">
+    <div class="container"><form action="traitement.php" method="POST" enctype="multipart/form-data">
 
-    Noms : <input type="text" name="nom" placeholder="Ton nom" required><br>
-    Prenoms : <input type="text" name="prenom" placeholder="Ton prénom"><br>
+    <b>Noms : </b><input type="text" name="nom" placeholder="Ton nom" required><br><br>
+    <b>Prenoms : </b><input type="text" name="prenom" placeholder="Ton prénom"><br><br>
 
     <div style="position: relative; width: 500px;">
-        Mot de passe : <input type="password" id="mdp" name="mdp" required>
+        <b>Mot de passe :</b><input type="password" id="mdp" name="mdp" required>
         <span onclick="toggleMdp()" style="position: absolute; right: 250px; top: 0px; cursor: pointer;"> 👁
         </span>
     </div>
-
     <script>
         function toggleMdp() {
             const input = document.getElementById('mdp');
@@ -25,23 +25,24 @@
                 input.type = 'password'
             }
         }
-    </script>
+    </script><br>
 
-    Email : <input type="email" name="mail" placeholder="votre_email@gmail.com" required><br>
-    Age : <input type="number" name="age" min="0" max="120" required><br>
-    Date de naissance : <input type="date" name="naissance" required><br>
+    <b>Email : </b><input type="email" name="mail" placeholder="votre_email@gmail.com" required><br><br>
+    <b>Age : </b><input type="number" name="age" min="0" max="120" required><br><br>
 
-    Photo : <input type="file" name="avatar" required><br>
+    <b>Date de naissance : </b><input type="date" name="naissance" required><br><br>
 
-    Sexe :
-    Homme <input type="radio" name="sexe" value="h">
-    Femme <input type="radio" name="sexe" value="f"><br>
+    <b>Photo : </b><input type="file" name="avatar" required><br><br>
 
-    <input type="hidden" name="token" value="MELKIOR"><br>
+    <b><div class="radio">Sexe : </b>
+    Masculin<input type="radio" name="sexe" value="h">
+    Feminin<input type="radio" name="sexe" value="f"></div>
 
-    J'accepte les conditions <input type="checkbox" name="accepte" value="oui" required><br>
+    <input type="hidden" name="token" value="MELKIOR"><br><br>
 
-    <input type="submit" value="Envoyer">
-    </form>
+    <div class="accepte"><strong><u>J'accepte les conditions d'utilisation</u></strong><input type="checkbox" name="accepte" value="oui" required></div><br>
+
+    <strong><input type="submit" value="Envoyer" onclick="alert(' Votre formulaire a bien été envoyé')"></strong>
+    </form></div>
 </body>
 </html>
