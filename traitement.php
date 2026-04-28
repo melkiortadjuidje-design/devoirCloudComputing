@@ -38,7 +38,7 @@ $email = htmlspecialchars($email);
  $tmp = $_FILES['avatar']['tmp_name'];
     
 move_uploaded_file($tmp, "uploads/" . $photo);  
-echo "Photo envoyée : " . $photo;
+echo "Photo envoyée : " . $photo . "<br>";
 
     }
     
