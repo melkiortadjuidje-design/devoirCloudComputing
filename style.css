@@ -1,3 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     display: flex;
     justify-content: center;
@@ -7,39 +13,39 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    margin: 0;
     padding: 20px;
-    box-sizing: border-box;
 }
 
 .container {
     width: 100%;
-    max-width: 500px;
-    margin: 0 auto;
-    padding: 30px;
+    max-width: 480px;
+    padding: 30px 28px;
     border: 1px solid rgba(255,255,255,0.2);
-    border-radius: 10px;
-    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url("form.png");
+    border-radius: 12px;
+    background-image: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.75)), url("form.png");
     background-size: cover;
     background-position: center;
-    background-color: rgba(0,0,0,0.8);
-    backdrop-filter: blur(5px);
-    box-sizing: border-box;
+    backdrop-filter: blur(4px);
 }
 
-.container form {
-    width: 100%;
+/* Chaque champ du formulaire */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 14px;
 }
 
-input {
-    background-color: transparent;
-    border: none;
-    border-bottom: 2px solid #131212;
-    outline: none;
-    color: #fff;
+.form-group label {
+    margin-bottom: 5px;
 }
 
-/* Tous les inputs texte prennent toute la largeur disponible */
+b {
+    color: #ffa500;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+/* Tous les inputs */
 input[type="text"],
 input[type="email"],
 input[type="password"],
@@ -47,66 +53,106 @@ input[type="number"],
 input[type="date"],
 input[type="file"] {
     width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-    display: block;
-    margin-top: 4px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid rgba(255,255,255,0.3);
+    outline: none;
+    color: #fff;
+    font-size: 14px;
+    padding: 6px 2px;
 }
 
-b {
-    font-weight: bold;
-    color: #ffa500;
-    font-size: 15px;
+input::placeholder {
+    color: rgba(255,255,255,0.45);
 }
 
-strong {
-    font-size: 16.5px;
-}
-
-input[type="submit"] {
+/* Champ mot de passe */
+.mdp-wrapper {
+    position: relative;
     width: 100%;
-    margin-top: 10px;
-    color: #ffd700;
+}
+
+.mdp-wrapper input {
+    padding-right: 28px;
+}
+
+.eye-icon {
+    position: absolute;
+    right: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 15px;
+    user-select: none;
+}
+
+/* Radio buttons */
+.radio {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 14px;
+}
+
+.radio-label {
+    color: #fff;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
     cursor: pointer;
 }
 
+.radio-label input[type="radio"] {
+    width: auto;
+    border-bottom: none;
+}
+
+/* Checkbox conditions */
 .accepte {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
     color: white;
+    margin-bottom: 14px;
+    flex-wrap: wrap;
+    text-align: center;
 }
 
-.radio {
-    color: #fff;
-    font-size: 15px;
+.accepte strong {
+    font-size: 14px;
+    color: #ffa500;
 }
 
-/* Champ mot de passe avec icône œil */
-.mdp-wrapper {
-    position: relative;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.mdp-wrapper input {
-    width: 100%;
-    padding-right: 30px;
-    box-sizing: border-box;
-}
-
-.eye-icon {
-    position: absolute;
-    right: 8px;
-    top: 50%;
-    transform: translateY(-50%);
+.accepte input[type="checkbox"] {
+    width: auto;
+    border-bottom: none;
     cursor: pointer;
-    user-select: none;
-    font-size: 16px;
 }
 
-/* ===== RESPONSIVE MOBILE ===== */
+/* Bouton Envoyer */
+input[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid rgba(255,215,0,0.5);
+    color: #ffd700;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    letter-spacing: 1px;
+}
+
+input[type="submit"]:hover {
+    color: #fff;
+    border-bottom-color: #fff;
+}
+
+/* ===== MOBILE ===== */
 @media (max-width: 600px) {
     body {
         align-items: flex-start;
@@ -114,7 +160,10 @@ input[type="submit"] {
     }
 
     .container {
-        padding: 20px 16px;
-        border-radius: 8px;
+        padding: 22px 16px;
+    }
+
+    .form-group {
+        margin-bottom: 12px;
     }
 }
