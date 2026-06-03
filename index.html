@@ -1,48 +1,80 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <link rel="stylesheet" href="style.css"> <title> Fast food by Melkior_grill</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fast food by Melkior_grill</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container"><form action="traitement.php" method="POST" enctype="multipart/form-data">
+    <div class="container">
+        <form action="traitement.php" method="POST" enctype="multipart/form-data">
 
-    <b>Noms : </b><input type="text" name="nom" placeholder="Ton nom" required><br><br>
-    <b>Prenoms : </b><input type="text" name="prenom" placeholder="Ton prénom"><br><br>
+            <div class="form-group">
+                <label><b>Noms :</b></label>
+                <input type="text" name="nom" placeholder="Ton nom" required>
+            </div>
 
-    <div style="position: relative; width: 500px;">
-        <b>Mot de passe :</b><input type="password" id="mdp" name="mdp" required>
-        <span onclick="toggleMdp()" style="position: absolute; right: 250px; top: 0px; cursor: pointer;"> 👁
-        </span>
+            <div class="form-group">
+                <label><b>Prénoms :</b></label>
+                <input type="text" name="prenom" placeholder="Ton prénom">
+            </div>
+
+            <div class="form-group">
+                <label><b>Mot de passe :</b></label>
+                <div class="mdp-wrapper">
+                    <input type="password" id="mdp" name="mdp" required>
+                    <span class="eye-icon" onclick="toggleMdp()">👁</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label><b>Email :</b></label>
+                <input type="email" name="mail" placeholder="votre_email@gmail.com" required>
+            </div>
+
+            <div class="form-group">
+                <label><b>Âge :</b></label>
+                <input type="number" name="age" min="0" max="120" required>
+            </div>
+
+            <div class="form-group">
+                <label><b>Date de naissance :</b></label>
+                <input type="date" name="naissance" required>
+            </div>
+
+            <div class="form-group">
+                <label><b>Photo :</b></label>
+                <input type="file" name="avatar" required>
+            </div>
+
+            <div class="form-group radio">
+                <b>Sexe :</b>
+                <label class="radio-label">
+                    <input type="radio" name="sexe" value="Masculin"> Masculin
+                </label>
+                <label class="radio-label">
+                    <input type="radio" name="sexe" value="Féminin"> Féminin
+                </label>
+            </div>
+
+            <input type="hidden" name="token" value="MELKIOR">
+
+            <div class="accepte">
+                <strong><u>J'accepte les conditions d'utilisation</u></strong>
+                <input type="checkbox" name="accepte" value="oui" required>
+            </div>
+
+            <input type="submit" value="Envoyer" onclick="alert('Votre formulaire a bien été envoyé')">
+
+        </form>
     </div>
+
     <script>
         function toggleMdp() {
             const input = document.getElementById('mdp');
-            if (input.type === 'password') {
-                input.type = 'text'
-            } else {
-                input.type = 'password'
-            }
+            input.type = input.type === 'password' ? 'text' : 'password';
         }
-    </script><br>
-
-    <b>Email : </b><input type="email" name="mail" placeholder="votre_email@gmail.com" required><br><br>
-    <b>Age : </b><input type="number" name="age" min="0" max="120" required><br><br>
-
-    <b>Date de naissance : </b><input type="date" name="naissance" required><br><br>
-
-    <b>Photo : </b><input type="file" name="avatar" required><br><br>
-
-    <b><div class="radio">Sexe : </b>
-    Masculin<input type="radio" name="sexe" value="Masculin">
-    Feminin<input type="radio" name="sexe" value="Féminin"></div>
-
-    <input type="hidden" name="token" value="MELKIOR"><br><br>
-
-    <div class="accepte"><strong><u>J'accepte les conditions d'utilisation</u></strong><input type="checkbox" name="accepte" value="oui" required></div><br>
-
-    <strong><input type="submit" value="Envoyer" onclick="alert(' Votre formulaire a bien été envoyé')"></strong>
-    </form></div>
+    </script>
 </body>
 </html>
