@@ -7,11 +7,12 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    padding: 20px
 }
 
 .container {
-    width: 400px;
-    margin: 50px auto;
+    width: 100%;
+    margin: auto;
     padding: 30px;
     border: 1px solid rgba(255,255,255,0.2);
     border-radius: 10px;
@@ -20,7 +21,7 @@ body {
     background-position: center;
     background-color: rgba(0,0,0,0.8);
     backdrop-filter: blur(5px);
-    max-width: 500px;
+    max-width: 400px;
 }
 
 input {
@@ -29,6 +30,10 @@ input {
     border-bottom: 2px solid #131212;
     outline: none;
     color: #fff;
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    box-sizing: border-box;
 }
 
 b {
@@ -59,3 +64,22 @@ input[type="submit"] {
     color: #fff;
     font-size: 15px;
 }
+
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 20px;
+    }
+    b {
+        font-size: 14px;
+    }
+    strong {
+        font-size: 14px;
+    }
+    input {
+        font-size: 16px;
+    }
+    body {
+        padding: 10px;
+    }
+}   
