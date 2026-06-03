@@ -22,7 +22,7 @@ body {
     padding: 30px 28px;
     border: 1px solid rgba(255,255,255,0.2);
     border-radius: 12px;
-    background-image: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.75)), url("form.png");
+    background-image: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.75)), url("background.png");
     background-size: cover;
     background-position: center;
     backdrop-filter: blur(4px);
