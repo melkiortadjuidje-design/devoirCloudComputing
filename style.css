@@ -2,16 +2,20 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url("background.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .container {
-    width: 400px;
-    margin: 50px auto;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
     padding: 30px;
     border: 1px solid rgba(255,255,255,0.2);
     border-radius: 10px;
@@ -20,7 +24,11 @@ body {
     background-position: center;
     background-color: rgba(0,0,0,0.8);
     backdrop-filter: blur(5px);
-    max-width: 500px;
+    box-sizing: border-box;
+}
+
+.container form {
+    width: 100%;
 }
 
 input {
@@ -29,6 +37,20 @@ input {
     border-bottom: 2px solid #131212;
     outline: none;
     color: #fff;
+}
+
+/* Tous les inputs texte prennent toute la largeur disponible */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="date"],
+input[type="file"] {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    display: block;
+    margin-top: 4px;
 }
 
 b {
@@ -45,9 +67,10 @@ input[type="submit"] {
     width: 100%;
     margin-top: 10px;
     color: #ffd700;
+    cursor: pointer;
 }
 
-.accepte { 
+.accepte {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -58,4 +81,40 @@ input[type="submit"] {
 .radio {
     color: #fff;
     font-size: 15px;
+}
+
+/* Champ mot de passe avec icône œil */
+.mdp-wrapper {
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.mdp-wrapper input {
+    width: 100%;
+    padding-right: 30px;
+    box-sizing: border-box;
+}
+
+.eye-icon {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    user-select: none;
+    font-size: 16px;
+}
+
+/* ===== RESPONSIVE MOBILE ===== */
+@media (max-width: 600px) {
+    body {
+        align-items: flex-start;
+        padding: 15px 10px;
+    }
+
+    .container {
+        padding: 20px 16px;
+        border-radius: 8px;
+    }
 }
